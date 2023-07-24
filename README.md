@@ -23,7 +23,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: https://www.frontendmentor.io/solutions/nft-preview-card-component-using-position-and-flexbox-6ulDXxVU9A
+- Solution URL: https://www.frontendmentor.io/solutions/faq-accordion-card-ceM1oQjj3y
 - Live Site URL: https://satryandi-miniproject10.netlify.app/
 
 ## My process
