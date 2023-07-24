@@ -1,0 +1,277 @@
+/* CSS Reset */
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+2. Remove default margin
+*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+3. Allow percentage-based heights in the application
+*/
+html,
+body {
+    height: 100%;
+}
+
+/*
+Typographic tweaks!
+4. Add accessible line-height
+5. Improve text rendering
+*/
+body {
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+    max-width: 100%;
+}
+
+/*
+7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.1;
+}
+
+/* General Styling */
+
+:root {
+    /*Colors*/
+    /*Primary*/
+    /*Text*/
+    --primarytext1: hsl(238, 29%, 16%);
+    --primarytext2: hsl(14, 88%, 65%);
+
+    /*Gradient*/
+    --gradient1: hsl(273, 75%, 66%);
+    --gradient2: hsl(240, 73%, 65%);
+
+    /*Neutral*/
+    /*Text*/
+    --neutraltext1: hsl(237, 12%, 33%);
+    --neutraltext2: hsl(240, 6%, 50%);
+
+    /*Dividers*/
+    --dividers: hsl(240, 5%, 91%);
+
+    /*Typography*/
+    /*Body Copy*/
+    --fsprimary: 12px;
+    --ffprimary: 'Kumbh Sans', sans-serif;
+    --fw400: 400;
+    --fw700: 700;
+}
+
+body {
+    color: var(--primarytext1);
+    background:
+        linear-gradient(-180deg,
+            hsl(273, 75%, 66%),
+            hsl(240, 73%, 65%));
+    font-family: var(--ffprimary);
+    font-size: var(--fsprimary);
+    font-weight: var(--fw400);
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_img {
+    display: none;
+}
+
+.card {
+    background-color: white;
+    width: 85vw;
+    /* height: max-content; */
+    min-height: max-content;
+    border-radius: 1.4rem;
+    background-image: url(images/bg-pattern-mobile.svg);
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: 12rem;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-bottom: 2rem;
+}
+
+.faq_logo {
+    width: 12rem;
+    margin: -5.5rem auto 0;
+}
+
+.faq_logo .womanmobile_img {
+    width: 100%;
+}
+
+.faq_content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.faq_title {
+    font-size: 1.7rem;
+    font-weight: var(--fw700);
+    align-self: center;
+}
+
+.faq_qa {
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+    padding: 0 1rem;
+}
+
+.faq_detail {
+    border-bottom: 1px solid var(--dividers);
+    padding-bottom: .8rem;
+}
+
+.faq_summary {
+    color: var(--neutraltext1);
+    list-style: none;
+    position: relative;
+    text-align: right;
+}
+
+.faq_summary:hover,
+.faq_summary:active {
+    color: var(--primarytext2);
+    cursor: pointer;
+    font-weight: var(--fw700);
+}
+
+.faq_summary:after {
+    display: inline-block;
+    content: url(images/icon-arrow-down.svg);
+}
+
+.faq_detail[open]>.faq_summary {
+    font-weight: var(--fw700);
+}
+
+.faq_detail[open] .faq_summary:after {
+    display: inline-block;
+    content: url(images/icon-arrow-down.svg);
+    transform: scaleY(-1);
+}
+
+.faq_question {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.faq_answer {
+    color: var(--neutraltext2);
+    margin-top: .5rem;
+}
+
+@media (min-width:1024px) {
+
+    .card {
+        background-image:
+            url(images/bg-pattern-desktop.svg),
+            url(images/illustration-woman-online-desktop.svg);
+        background-position:
+            left -27.5rem bottom -6rem,
+            left -15% bottom 5rem;
+        background-repeat:
+            repeat-y,
+            no-repeat;
+        background-size:
+            92%,
+            50%;
+        flex-direction: row;
+        width: 65vw;
+        height: 70vh;
+        margin: 0;
+        padding: 0;
+        gap: 0;
+    }
+
+    .faq_logo {
+        width: 22rem;
+        margin: 0 0;
+        position: relative;
+    }
+
+    .womanmobile_img {
+        display: none;
+    }
+
+    .faq_header {
+        width: 100%;
+    }
+
+    .box_img {
+        width: 50%;
+        display: block;
+        position: absolute;
+        left: -5.5rem;
+        top: 11rem;
+    }
+
+    .faq_title {
+        align-self: flex-start;
+    }
+
+    .faq_content {
+        padding: 4rem 5rem 0 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .faq_qa {
+        padding: 0;
+    }
+}
